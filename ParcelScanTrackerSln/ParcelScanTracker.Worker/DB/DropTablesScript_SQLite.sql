@@ -1,0 +1,13 @@
+﻿PRAGMA foreign_keys = OFF;
+
+BEGIN TRANSACTION;
+
+DROP TABLE IF EXISTS [User];
+DROP TABLE IF EXISTS Device;
+DROP TABLE IF EXISTS ParcelScanEvent;
+DROP TABLE IF EXISTS ScanEventState;
+DROP TABLE IF EXISTS WorkerInfo;
+
+COMMIT;
+
+PRAGMA foreign_keys = ON;

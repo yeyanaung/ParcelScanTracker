@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "Docker!Passw0rd"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserverdata:/var/opt/mssql
+
+  worker:
+    image: yourdockerhub/parcel-scan-tracker-worker:latest # Replace with your built image name
+    depends_on:
+      - sqlserver
+    environment:
+      DOTNET_ENVIRONMENT: "SIT"
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=ParcelScanDb;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;"
+      Encrypted: "SITEncryptedPasswordValue"
+      ScanEventApi__BaseUrl: "https://sit-api.yourdomain.com/v1/scans/scanevents"
+      ScanEventApi__Limit: "100"
+      ScanEventApi__PollingDelayMs: "30000"
+      Config__WorkerId: "W_SIT"
+    volumes:
+      - ./appsettings.SIT.json:/app/appsettings.SIT.json:ro
+
+volumes:
+  sqlserverdata:

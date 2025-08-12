@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="JsonModels\**" />
+    <EmbeddedResource Remove="JsonModels\**" />
+    <None Remove="JsonModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\Device.cs" />
+    <Compile Remove="Models\User.cs" />
+    <Compile Remove="Models\WorkerInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

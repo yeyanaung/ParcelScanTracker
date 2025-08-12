@@ -1,0 +1,36 @@
+{
+  "ScanEvents": [
+    {
+      "EventId": 100,
+      "ParcelId": 5002,
+      "Type": "STATUS",
+      "CreatedDateTimeUtc": "2021-05-11T21:11:34.1506147Z",
+      "StatusCode": "Success",
+      "Device": {
+        "DeviceTransactionId": 100,
+        "DeviceId": 103
+      },
+      "User": {
+        "UserId": "NC1001",
+        "CarrierId": "NC",
+        "RunId": "100"
+      }
+    },
+    {
+      "EventId": 101,
+      "ParcelId": 5003,
+      "Type": "COMPLETE",
+      "CreatedDateTimeUtc": "2021-05-11T22:15:10.1200000Z",
+      "StatusCode": "Success",
+      "Device": {
+        "DeviceTransactionId": 101,
+        "DeviceId": 104
+      },
+      "User": {
+        "UserId": "PH2002",
+        "CarrierId": "PH",
+        "RunId": "101"
+      }
+    }
+  ]
+}

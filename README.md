@@ -54,6 +54,35 @@ GET /v1/scans/scanevents?FromEventId=<id>&Limit=<n>
 }
 ```
 
+### Steps to Generate and Test DB Password
+
+In `Program.cs`, uncomment the relevant block and run the application.  
+This allows you to generate an **encrypted** database password for `appsettings.json` or **decrypt** an existing one for testing.
+
+#### 1. Encrypt a Password
+Uncomment the following code to encrypt a plain-text password:
+```csharp
+// Example: run this in a console app or test project to generate the encrypted password.
+// Uncomment the following lines temporarily:
+
+/*
+string plainPassword = "sa";
+string encrypted = CryptoHelper.Encrypt(plainPassword);
+Console.WriteLine($"Encrypted password: {encrypted}");
+// Copy this value into appsettings.json under "DbPasswordEncrypted"
+return;
+*/
+
+// Example: run this in a console app or test project to decrypt an existing encrypted password.
+// Uncomment the following lines temporarily:
+
+/*
+string encryptedPassword = "Base64OrHexStringHere";
+string decrypted = CryptoHelper.Decrypt(encryptedPassword);
+Console.WriteLine($"Decrypted password: {decrypted}");
+return;
+*/
+
 ---
 
 ## 3. Database Initialization

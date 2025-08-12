@@ -1,4 +1,4 @@
-namespace YourNamespace.Models
+namespace ScanEventAPI.Models
 {
     public class ScanEvent
     {

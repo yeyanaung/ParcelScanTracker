@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace YourNamespace.Models
+namespace ScanEventAPI.Models
 {
     public class ScanEventsRoot
     {

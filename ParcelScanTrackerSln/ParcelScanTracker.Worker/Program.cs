@@ -8,6 +8,14 @@ using System.Reflection;
 // Entry point for the Worker Service application.
 var builder = Host.CreateApplicationBuilder(args);
 
+// Example: run this in a console app or test to generate encrypted password
+/* 
+string plainPassword = "DBP@ssword";
+string encrypted = CryptoHelper.Encrypt(plainPassword);
+Console.WriteLine(encrypted); // Copy this value to appsettings.json "Encrypted"
+return;
+*/
+
 // Configure log4net for logging.
 ILoggerRepository logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
 XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
